@@ -16,6 +16,23 @@
       "email": "matheus@testedois.com.br"
     }
   },
+  "conflito": {
+    "data": "04/03/2025",
+    "hora": "15:00",
+    "dia": 4,
+    "profissional": {
+      "nome": "Jimi",
+      "matricula": 1006
+    },
+    "servico": {
+      "codigo": 4,
+      "descricao": "Tintura"
+    },
+    "usuario": {
+      "nome": "Matheus Teste Quatro",
+      "email": "matheus@testequatro.com.br"
+    }
+  },
   "duplicado": {
     "data": "01/03/2025",
     "hora": "08:00",

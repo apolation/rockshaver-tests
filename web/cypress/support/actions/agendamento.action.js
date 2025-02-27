@@ -25,3 +25,9 @@ Cypress.Commands.add('escolherHorarioAgendamento', (hora) => {
 Cypress.Commands.add('finalizarAgendamento', () => {
     cy.contains('button', 'Confirmar e reservar').click();
 });
+
+Cypress.Commands.add('erroAlerta', (menssagemAlerta) => {
+    cy.get('[class*="alert-error"]')
+        .should('be.visible')
+        .should('have.text', menssagemAlerta)
+})
