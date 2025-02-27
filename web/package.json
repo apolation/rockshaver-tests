@@ -2,6 +2,8 @@
   "name": "web",
   "packageManager": "yarn@4.6.0",
   "devDependencies": {
-    "cypress": "13.17.0"
+    "bson": "^6.10.3",
+    "cypress": "13.17.0",
+    "cypress-mongodb": "^6.2.1"
   }
 }

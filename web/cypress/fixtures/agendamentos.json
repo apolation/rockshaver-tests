@@ -1,0 +1,36 @@
+{
+  "sucesso": {
+    "data": "26/03/2025",
+    "profissional": {
+      "nome": "Tina",
+      "matricula": 1003
+    },
+    "hora": "10:00",
+    "dia": 3,
+    "servico": {
+      "codigo": 3,
+      "descricao": "Combo"
+    },
+    "usuario": {
+      "nome": "Matheus Teste Dois",
+      "email": "matheus@testedois.com.br"
+    }
+  },
+  "duplicado": {
+    "data": "28/02/2025",
+    "profissional": {
+      "nome": "Kurt",
+      "matricula": 1008
+    },
+    "hora": "19:00",
+    "dia": 28,
+    "servico": {
+      "codigo": 4,
+      "descricao": "Tintura"
+    },
+    "usuario": {
+      "nome": "Matheus Teste Tres",
+      "email": "matheus@testetres.com.br"
+    }
+  }
+}

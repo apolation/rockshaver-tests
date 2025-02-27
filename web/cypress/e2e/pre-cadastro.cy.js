@@ -1,33 +1,35 @@
-import preRegistrationPage from '../support/pages/pre-registration.page'
-
 describe('Pre-Cadastro', () => {
   it('Deve realizar o pré-cadastro do cliente', () => {
-    preRegistrationPage.go()
-    preRegistrationPage.fillForm('Matheus Teste', 'matheus@teste.com.br')
-    preRegistrationPage.submit()
-    preRegistrationPage.verifyPreRegistration('Matheus', 'matheus@teste.com.br')
+    const usuario = {
+      nome: 'Matheus Teste', 
+      email: 'matheus@teste.com.br'
+    }
+    cy.iniciarPreCadastro(usuario)
+    cy.verificarPreCadastro(usuario)
   })
 
   it('Campos obrigatórios', () => {
-    preRegistrationPage.go()
-    // preRegistrationPage.fillForm('Matheus Teste', 'matheus@teste.com.br')
-    preRegistrationPage.submit()
-    preRegistrationPage.alertHave('Nome Completo','O campo nome é obrigatório.')
-    preRegistrationPage.alertHave('E-mail','O campo e-mail é obrigatório.')
+    cy.iniciarPreCadastro()
+    cy.verificarAlerta('Nome Completo','O campo nome é obrigatório.')
+    cy.verificarAlerta('E-mail','O campo e-mail é obrigatório.')
     
   })
 
   it('Não deve realizar o pre cadastro apenas com primeiro nome', () => {
-    preRegistrationPage.go()
-    preRegistrationPage.fillForm('Matheus', 'matheus@teste.com.br')
-    preRegistrationPage.submit()
-    preRegistrationPage.alertHave('Nome Completo','Informe seu nome completo.')
+    const usuario = {
+      nome: 'Matheus', 
+      email: 'matheus@teste.com.br'
+    }
+    cy.iniciarPreCadastro(usuario)
+    cy.verificarAlerta('Nome Completo','Informe seu nome completo.')
   })
 
   it('Não deve realizar o pre cadastro com email incorreto', () => {
-    preRegistrationPage.go()
-    preRegistrationPage.fillForm('Matheus Teste', 'www.matheusteste.com.br')
-    preRegistrationPage.submit()
-    preRegistrationPage.alertHave('E-mail','O e-mail inserido é inválido.')
+    const usuario = {
+      nome: 'Matheus Teste', 
+      email: 'www.matheusteste.com.br'
+    }
+    cy.iniciarPreCadastro(usuario)
+    cy.verificarAlerta('E-mail','O e-mail inserido é inválido.')
   })
 })
