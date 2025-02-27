@@ -18,12 +18,12 @@
   },
   "duplicado": {
     "data": "28/02/2025",
+    "hora": "19:00",
+    "dia": 28,
     "profissional": {
       "nome": "Kurt",
       "matricula": 1008
     },
-    "hora": "19:00",
-    "dia": 28,
     "servico": {
       "codigo": 4,
       "descricao": "Tintura"
