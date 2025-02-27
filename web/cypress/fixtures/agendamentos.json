@@ -17,12 +17,12 @@
     }
   },
   "duplicado": {
-    "data": "28/02/2025",
-    "hora": "19:00",
-    "dia": 28,
+    "data": "01/03/2025",
+    "hora": "08:00",
+    "dia": 1,
     "profissional": {
-      "nome": "Kurt",
-      "matricula": 1008
+      "nome": "Freddie",
+      "matricula": 1001
     },
     "servico": {
       "codigo": 4,

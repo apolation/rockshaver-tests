@@ -38,6 +38,7 @@ Cypress.Commands.add('agendamentoApi', (agendamento) => {
             nomeCliente: agendamento.usuario.nome,
             emailCliente: agendamento.usuario.email,
             data: agendamento.data,
+            hora: agendamento.hora,
             matricula: agendamento.profissional.matricula,
             codigoServico: agendamento.servico.codigo
         }
