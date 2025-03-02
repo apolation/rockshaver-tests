@@ -4,6 +4,7 @@
   "devDependencies": {
     "bson": "^6.10.3",
     "cypress": "13.17.0",
-    "cypress-mongodb": "^6.2.1"
+    "cypress-mongodb": "^6.2.1",
+    "dotenv": "^16.4.7"
   }
 }

@@ -1,18 +1,20 @@
-const { configurePlugin } = require('cypress-mongodb');
+require('dotenv').config()
 
+const { configurePlugin } = require('cypress-mongodb');
 
 module.exports = {
   env: {
     mongodb: {
-      uri: 'mongodb://cypress:skills@localhost:27017',
-      database: 'rockshaver'
-    }
+      uri: process.env.MONGO_URI,
+      database: process.env.DATABASE
+    },
+    baseApi: process.env.API_URL
   },
   e2e: {
     setupNodeEvents(on, config) {
       configurePlugin(on);
     },
-    baseUrl: "http://localhost:3000",
+    baseUrl: process.env.WEB_URL,
     viewportWidth: 1920,
     viewportHeight: 1080,
   },

@@ -23,13 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import './actions/precadastro.acion'
+import './actions/precadastro.action'
 import './actions/agendamento.action'
 
 Cypress.Commands.add('agendamentoApi', (agendamento) => {
     cy.request({
         method: 'POST',
-        url: 'http://localhost:3333/api/agendamentos',
+        url: `${Cypress.env('baseApi')}/api/agendamentos`,
         headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer 3a8a9b8fae87baf503e7c5fe5b97fd72',
