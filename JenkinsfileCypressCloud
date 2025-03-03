@@ -11,7 +11,7 @@ pipeline {
                 dir('api') {
                     sh 'npm install'
                     sh 'npx cypress install --force'
-                    sh 'node runner.js'
+                    sh 'npx cypress run --browser chrome --record --key a4f6d5bd-0d51-441d-9071-0d4f21104964'
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
                 dir('mobile') {
                     sh 'npm install'
                     sh 'npx cypress install --force'
-                    sh 'node runner.js'
+                    sh 'npx cypress run --browser chrome --record --key 197206f5-d333-49e4-bedc-a4bd87ebc485'
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline {
                 dir('web') {
                     sh 'npm install'
                     sh 'npx cypress install --force'
-                    sh 'node runner.js'
+                    sh 'npx cypress run --browser chrome --record --key 65ccb0fd-65f4-4d3b-872b-80f01f850561'
                 }
             }
         }
