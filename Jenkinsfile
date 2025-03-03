@@ -6,7 +6,7 @@ pipeline {
             }
     }
     stages {
-        stage('Testes de API') {
+        stage('API') {
             steps {
                 dir('api') {
                     sh 'npm install'
@@ -16,20 +16,24 @@ pipeline {
             }
         }
 
-        stage('Testes no Frontend (Mobile)'){
+        stage('Mobile'){
             steps {
                 dir('mobile') {
-                    sh 'echo teste'
+                    sh 'npm install'
+                    sh 'npx cypress install --force'
+                    sh 'npx cypress run --browser chrome'
                 }
             }
         }
 
-        stage('Testes no Frontend (Web)'){
-            steps {
-                dir('web') {
-                    sh 'echo teste'
-                }
-            }
-        }
+        // stage('Web'){
+        //     steps {
+        //         dir('web') {
+        //             sh 'npm install'
+        //             sh 'npx cypress install --force'
+        //             sh 'npx cypress run --browser chrome'
+        //         }
+        //     }
+        // }
     }
 }
