@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        docker { image 'cypress/browsers:latest' }
+        docker { 
+            image 'cypress/browsers:latest' 
+            args '-u root --networkd rockshaver_skynet'
+            }
     }
     stages {
         stage('Testes de API') {
