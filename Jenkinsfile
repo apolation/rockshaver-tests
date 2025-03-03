@@ -26,14 +26,14 @@ pipeline {
             }
         }
 
-        // stage('Web'){
-        //     steps {
-        //         dir('web') {
-        //             sh 'npm install'
-        //             sh 'npx cypress install --force'
-        //             sh 'npx cypress run --browser chrome'
-        //         }
-        //     }
-        // }
+        stage('Web'){
+            steps {
+                dir('web') {
+                    sh 'npm install'
+                    sh 'npx cypress install --force'
+                    sh 'npx cypress run --browser chrome'
+                }
+            }
+        }
     }
 }
