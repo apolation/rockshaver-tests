@@ -23,4 +23,38 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import '.actions/login.action'
+import './actions/login.action'
+
+Cypress.Commands.add('verificarToast', (mensagem) => {
+    cy.get('[role="status"]')
+        .should('be.visible')
+        .should('have.text', mensagem)
+})
+
+Cypress.Commands.add('criarAgendamentosApi', (profissional, agendamentos)=> {
+    cy.deleteMany(
+        { matricula: profissional.matricula },
+        { collection: 'agendamentos' }
+    )
+
+    agendamentos.forEach((a) => {
+        cy.request({
+            method: 'POST',
+            url: `${Cypress.env('baseApi')}/api/agendamentos`,
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer 3a8a9b8fae87baf503e7c5fe5b97fd72',
+            },
+            body: {
+                nomeCliente: a.usuario.nome,
+                emailCliente: a.usuario.email,
+                data: a.data,
+                hora: a.hora,
+                matricula: profissional.matricula,
+                codigoServico: a.servico.codigo
+            }
+        }).then((response) => {
+            expect(response.status).to.eq(201)
+        })
+    })
+})
